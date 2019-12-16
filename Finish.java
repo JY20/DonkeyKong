@@ -25,6 +25,6 @@ public class Finish extends World
         addObject(new Floor2(), 1375, 1000);
         addObject(new Princess(), 145, 940);
         addObject(new Mario(), 85, 940);
-        showText("YOU WIN", 750, 600);
+        showText("YOU WIN", BackGround1.screenL/2, BackGround1.screenW/2);
     }
 }

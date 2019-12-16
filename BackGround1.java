@@ -10,6 +10,8 @@ public class BackGround1 extends World
 {
     public static int screenL = 1200;
     public static int screenW = 700;
+    int [] fx = new int [] {125, 625};
+    int [] fy = new int [] {270, 470};
     /**
      * Constructor for objects of class BackGround1.
      * 
@@ -17,25 +19,20 @@ public class BackGround1 extends World
     public BackGround1()
     {    
         super(screenL, screenW, 1); 
-        addObject(new DK(), 200, 150);
-        addObject(new Floor(), 125, 219);
-        addObject(new Floor(), 375, 219);
-        addObject(new Floor(), 625, 219);
-        addObject(new Floor(), 875, 219);
-        addObject(new Floor2(), 625, 500);
-        addObject(new Floor2(), 875, 500);
-        addObject(new Floor2(), 1125, 500);
-        addObject(new Floor2(), 1375, 500);
+        addObject(new DK(), 200, fy[0]-60);
+        
+        //
+        for(int i= 0; i < 4; i++) {
+            addObject(new Floor(), fx[0] + (250*i), fy[0]);
+            addObject(new Floor2(), fx[1] + (250*i), fy[1]);
+        } 
+        //Starting floor
         addObject(new Floor(), 125, 781);
         addObject(new Floor(), 375, 781);
         addObject(new Floor(), 625, 781);
         addObject(new Floor(), 875, 781);
-        addObject(new Floor2(), 125, 1000);
-        addObject(new Floor2(), 375, 1000);
-        addObject(new Floor2(), 625, 1000);
-        addObject(new Floor2(), 875, 1000);
-        addObject(new Floor2(), 1125, 1000);
-        addObject(new Floor2(), 1375, 1000);
+        addObject(new Floor(), 1125, 781);
+        addObject(new Floor(), 1375, 781);
         addObject(new Mario(), 125, 940);
     }
 }

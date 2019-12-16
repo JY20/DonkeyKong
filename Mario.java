@@ -5,6 +5,8 @@ public class Mario extends Actor
     String Marioimage = "mariopixelCopy.png";
     long lastTime;
     int Lives = 3;
+    int textLX = 750;
+    int textLY = 600;
     public void act() 
     {
         speed = speed + 1;
@@ -17,7 +19,7 @@ public class Mario extends Actor
         }
         if(Lives == 0)
         {
-            getWorld().showText("GAME OVER", 750, 600);
+            getWorld().showText("GAME OVER", BackGround1.screenL/2, BackGround1.screenW/2);
             Greenfoot.stop();
         }
         if(speed > 0)
@@ -26,9 +28,9 @@ public class Mario extends Actor
             {
                 speed = 0;
                 setLocation(getX(), getY() - 1);
-                if(Greenfoot.isKeyDown("up"))
+                if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))
                 {
-                    speed = - 27;
+                    speed = - 23;
                 }
             }
         }
@@ -40,7 +42,7 @@ public class Mario extends Actor
                 setLocation(getX(), getY() + 1);
             }
         }    
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
             /*if(System.currentTimeMillis() - lastTime > 500 && Marioimage.equals("mariopixelCopy.png"))
@@ -64,7 +66,7 @@ public class Mario extends Actor
                move(1);
             } 
         } else {
-            if(Greenfoot.isKeyDown("right"))
+            if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
                setImage("mariopixel.png");
@@ -76,7 +78,7 @@ public class Mario extends Actor
                 setImage("mario-big.png");
             }
         }
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))
         {
             speed = 50;
         }
