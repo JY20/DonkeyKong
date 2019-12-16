@@ -8,14 +8,15 @@ import greenfoot.*;
  */
 public class BackGround1 extends World
 {
-
+    public static int screenL = 1200;
+    public static int screenW = 700;
     /**
      * Constructor for objects of class BackGround1.
      * 
      */
     public BackGround1()
     {    
-        super(1500, 1000, 1); 
+        super(screenL, screenW, 1); 
         addObject(new DK(), 200, 150);
         addObject(new Floor(), 125, 219);
         addObject(new Floor(), 375, 219);
