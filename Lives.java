@@ -15,5 +15,11 @@ public class Lives extends Actor
     public void act() 
     {
         // Add your action code here.
+        //if (){
+            remove();
+        //}
     }    
+    public void remove () {
+        getWorld().removeObject(this);
+    }
 }
