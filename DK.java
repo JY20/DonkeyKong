@@ -6,8 +6,8 @@ public class DK extends Actor
     {
         if(isTouching(Mario.class))
         {
-            Greenfoot.setWorld(new Finish());
-
+            //Greenfoot.setWorld(new Finish());
+            Greenfoot.setWorld(new Background2());
             Greenfoot.stop();
         }
         if(System.currentTimeMillis() - lastTime > 2500)

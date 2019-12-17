@@ -11,11 +11,11 @@ public class BackGround1 extends World
     public static int screenL = 1200;
     public static int screenW = 700;
     int [] fx = new int [] {125, 625};
-    int [] fy = new int [] {270, 470};
+    int [] fy = new int [] {200, 430};
     /**
      * Constructor for objects of class BackGround1.
      * 
-     */
+d     */
     public BackGround1()
     {    
         super(screenL, screenW, 1); 
