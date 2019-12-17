@@ -12,6 +12,7 @@ public class DK extends Actor
         }
         if(System.currentTimeMillis() - lastTime > 4000)
         {
+            setImage("Throwing.png");
             lastTime = System.currentTimeMillis();
             getWorld().addObject(new Barrel(), getX(), getY());
         }
