@@ -16,6 +16,7 @@ public class Mario extends Actor
         {
             removeTouching(Barrel.class);
             Lives = Lives - 1;
+            
         }
         if(Lives == 0)
         {

@@ -12,6 +12,7 @@ public class BackGround1 extends World
     public static int screenW = 700;
     int [] fx = new int [] {125, 625};
     int [] fy = new int [] {200, 430};
+    public static Lives [] limage;
     /**
      * Constructor for objects of class BackGround1.
      * 
@@ -30,9 +31,9 @@ d     */
         for(int i= 0; i < 6; i++) {
             addObject(new Floor(), 125+ (250*i), 781);
         }    
-        /*for(int i= 0; i < 3; i++) {
-            addObject(new Lives(), 10, 10);
-        }*/
+        for(int i= 0; i < 3; i++) {
+            addObject(limage[i], 20+ (50*i), 20);
+        }
         addObject(new Mario(), 125, 940);
     }
 }
