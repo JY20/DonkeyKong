@@ -47,6 +47,8 @@ public class Mario extends Actor
             move(-5);
            
             setImage("mariopixelCopy.png");
+            setImage("marioleft.png");
+            
             while(isTouching(Floor.class))
             {
                move(1);
