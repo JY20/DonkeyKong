@@ -30,9 +30,9 @@ d     */
         for(int i= 0; i < 6; i++) {
             addObject(new Floor(), 125+ (250*i), 781);
         }    
-        for(int i= 0; i < 3; i++) {
+        /*for(int i= 0; i < 3; i++) {
             addObject(new Lives(), 10, 10);
-        }
+        }*/
         addObject(new Mario(), 125, 940);
     }
 }
