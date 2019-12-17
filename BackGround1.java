@@ -26,13 +26,10 @@ d     */
             addObject(new Floor(), fx[0] + (250*i), fy[0]);
             addObject(new Floor2(), fx[1] + (250*i), fy[1]);
         } 
-        //Starting floor
-        addObject(new Floor(), 125, 781);
-        addObject(new Floor(), 375, 781);
-        addObject(new Floor(), 625, 781);
-        addObject(new Floor(), 875, 781);
-        addObject(new Floor(), 1125, 781);
-        addObject(new Floor(), 1375, 781);
+        
+        for(int i= 0; i < 6; i++) {
+            addObject(new Floor(), 125+ (250*i), 781);
+        }    
         addObject(new Mario(), 125, 940);
     }
 }
