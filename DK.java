@@ -10,7 +10,7 @@ public class DK extends Actor
             Greenfoot.setWorld(new Background2());
             Greenfoot.stop();
         }
-        if(System.currentTimeMillis() - lastTime > 2500)
+        if(System.currentTimeMillis() - lastTime > 4000)
         {
             lastTime = System.currentTimeMillis();
             getWorld().addObject(new Barrel(), getX(), getY());
