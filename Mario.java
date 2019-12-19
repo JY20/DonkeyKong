@@ -16,7 +16,7 @@ public class Mario extends Actor
         {
             removeTouching(Barrel.class);
             Lives = Lives - 1;
-            
+            BackGround1.limage[Lives].remove();
         }
         if(Lives == 0)
         {
@@ -47,8 +47,7 @@ public class Mario extends Actor
         {
             move(-5);
            
-            setImage("mariopixelCopy.png");
-            setImage("marioleft.png");
+           setImage("mariopixelCopy.png");
             
             while(isTouching(Floor.class))
             {
