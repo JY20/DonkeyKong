@@ -1,4 +1,11 @@
 import greenfoot.*;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.File;
+
 public class Mario extends Actor
 {
     int speed;
@@ -7,8 +14,8 @@ public class Mario extends Actor
     int Lives = 3;
     int textLX = 750;
     int textLY = 600;
-    public void act() 
-    {
+    public int score = 100;
+    public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
         getWorld().showText("Lives : "+ Lives +"",1450, 50);
@@ -17,6 +24,10 @@ public class Mario extends Actor
             removeTouching(Barrel.class);
             Lives = Lives - 1;
             BackGround1.limage[Lives].remove();
+            try {
+                findHighScore();
+            } catch(IOException ioe) {
+            }
         }
         if(Lives == 0)
         {
@@ -71,4 +82,21 @@ public class Mario extends Actor
             speed = 50;
         }
     } 
+    public void findHighScore() throws IOException{
+        File file = new File("HighScore.txt");
+        FileReader fr = new FileReader(file);
+        FileWriter fw = new FileWriter(file, false);
+        BufferedReader br = new BufferedReader(fr);
+        BufferedWriter bw = new BufferedWriter(fw);
+        String oldT = br.readLine();
+        br.close();
+        int oldS = Integer.valueOf(oldT);
+        if (score >= oldS) {
+            bw.write(score);
+        }else {
+            bw.write(oldS);
+        }
+        bw.close();
+    }
+    
 }
