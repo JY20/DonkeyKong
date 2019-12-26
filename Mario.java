@@ -18,7 +18,8 @@ public class Mario extends Actor
     public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
-        getWorld().showText("Lives : "+ Lives +"",1450, 50);
+        //getWorld().showText("Lives : "+ Lives +"",1450, 50);
+        getWorld().showText("ssss" + score, BackGround1.screenL/2, 100);
         if(isTouching(Barrel.class))
         {
             removeTouching(Barrel.class);
@@ -83,9 +84,8 @@ public class Mario extends Actor
         }
     } 
     public void findHighScore() throws IOException{
-        File file = new File("HighScore.txt");
-        FileReader fr = new FileReader(file);
-        FileWriter fw = new FileWriter(file, false);
+        FileReader fr = new FileReader("Score.txt");
+        FileWriter fw = new FileWriter("Score.txt", false);
         BufferedReader br = new BufferedReader(fr);
         BufferedWriter bw = new BufferedWriter(fw);
         String oldT = br.readLine();

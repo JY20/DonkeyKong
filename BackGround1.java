@@ -36,6 +36,7 @@ d     */
             limage[i] = new Lives();
             addObject(limage[i], 50+(i*50), 50);
         }
+        addObject(new Coin(), 200, 200);
         addObject(new Mario(), 125, 940);
     }
 }
