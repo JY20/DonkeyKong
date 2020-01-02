@@ -15,20 +15,20 @@ public class Mario extends Actor
     int textLX = 750;
     int textLY = 600;
     public int score = 100;
+    String test = "12";
     public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
-        //getWorld().showText("Lives : "+ Lives +"",1450, 50);
-        getWorld().showText("ssss" + score, BackGround1.screenL/2, 100);
+        try {
+            findHighScore();
+            getWorld().showText(test, BackGround1.screenL/2, 100);
+        } catch(IOException ioe) {
+        }
         if(isTouching(Barrel.class))
         {
             removeTouching(Barrel.class);
             Lives = Lives - 1;
             BackGround1.limage[Lives].remove();
-            try {
-                findHighScore();
-            } catch(IOException ioe) {
-            }
         }
         if(Lives == 0)
         {
@@ -85,18 +85,20 @@ public class Mario extends Actor
     } 
     public void findHighScore() throws IOException{
         FileReader fr = new FileReader("Score.txt");
-        FileWriter fw = new FileWriter("Score.txt", false);
+        FileWriter fw = new FileWriter("Score.txt", true);
         BufferedReader br = new BufferedReader(fr);
         BufferedWriter bw = new BufferedWriter(fw);
         String oldT = br.readLine();
         br.close();
-        int oldS = Integer.valueOf(oldT);
-        if (score >= oldS) {
+        test = oldT;
+        //int oldS = Integer.parseInt(oldT);
+        
+        /*if (score >= oldS) {
             bw.write(score);
         }else {
             bw.write(oldS);
         }
-        bw.close();
+        bw.close();*/
     }
     
 }
