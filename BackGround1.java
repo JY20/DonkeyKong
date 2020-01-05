@@ -39,5 +39,6 @@ d     */
         addObject(new Coin(), 200, 200);
         addObject(new Mario(), 125, 940);
         addObject(new Ladder(), 450,556);
+        setPaintOrder(Mario.class, Ladder.class);
     }
 }
