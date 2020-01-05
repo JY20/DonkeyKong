@@ -1,4 +1,5 @@
-import greenfoot.*;
+
+    import greenfoot.*;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -78,6 +79,11 @@ public class Mario extends Actor
                 setImage("mario-big.png");
             }
         }
+              while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
+            
+                speed = -30;
+                
+            }
         if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))
         {
             speed = 50;
