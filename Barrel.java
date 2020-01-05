@@ -20,7 +20,7 @@ public class Barrel extends Actor
           while(isTouching(Floor2.class))
           {
             setLocation(getX() - 3, getY() - 3);
-            turn(-8);
+            turn(-20);
           }
           while(isTouching(Floor.class))
           {
@@ -30,7 +30,7 @@ public class Barrel extends Actor
           while(isTouching(Ladder.class))
           {
             setLocation(getX() - 3, getY() - 3);
-            turn(-8);
+            turn(0);
           }
           turn(8);
        }
