@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Coin extends Actor
 {
-    //public static Random rand = new Random();
+    public static Random rand = new Random();
     /**
      * Act - do whatever the Coin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,4 +18,10 @@ public class Coin extends Actor
         // Add your action code here
         
     }    
+    public static void changeLocation(){
+        int min = 30;
+        //int x = Math.random*
+        //int y = (int)(Math.random() * ((BackGround1.screenL - min) + 1) + min);
+        
+    }
 }

@@ -106,7 +106,7 @@ public class Mario extends Actor
         String oldT = br.readLine();
         br.close();
         test = oldT;
-        int oldS = Integer.parseInt(oldT);
+        //int oldS = Integer.parseInt(oldT);
         getWorld().showText( "sss"+test, BackGround1.screenL/2, 100);
     }
     public void writeHighscore() throws IOException{

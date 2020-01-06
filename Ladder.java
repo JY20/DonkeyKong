@@ -15,6 +15,6 @@ public class Ladder extends Actor
     public void act() 
     {
         // Add your action code here.
-        
+        setImage("ladder.png");
     }    
 }
