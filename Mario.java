@@ -12,6 +12,7 @@ public class Mario extends Actor
     int speed;
     String Marioimage = "mariopixelCopy.png";
     private GreenfootImage image = new GreenfootImage("mariopixel2.png");
+    private GreenfootImage image2 = new GreenfootImage("marioleft.png");
     long lastTime;
     int Lives = 3;
     int textLX = 750;
@@ -21,8 +22,10 @@ public class Mario extends Actor
     
     public Mario() {
         GreenfootImage image = getImage();
-        image.scale(76,65);
+        GreenfootImage image2 = getImage();
         setImage(image);
+        setImage(image2);
+        image.scale(76,65);
     }
     
     public void act() {
@@ -67,23 +70,15 @@ public class Mario extends Actor
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
-           
-           setImage("mariopixelCopy.png");
-            
-            while(isTouching(Floor.class))
-            {
-               move(1);
-            } 
+            setImage(image2);
+            image.scale(76,65);
+
         } else {
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
                setImage(image);
                image.scale(76,65);
-               // while(isTouching(Floor.class))
-               // {
-              //    move(-1);
-              // }
             } else{
                 setImage("mario-big.png");
             }
