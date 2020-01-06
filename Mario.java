@@ -11,12 +11,20 @@ public class Mario extends Actor
 {
     int speed;
     String Marioimage = "mariopixelCopy.png";
+    private GreenfootImage image = new GreenfootImage("mariopixel2.png");
     long lastTime;
     int Lives = 3;
     int textLX = 750;
     int textLY = 600;
     public int score = 100;
     String test = "12";
+    
+    public Mario() {
+        GreenfootImage image = getImage();
+        image.scale(76,65);
+        setImage(image);
+    }
+    
     public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
@@ -70,11 +78,12 @@ public class Mario extends Actor
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
-               setImage("mariopixel.png");
-                while(isTouching(Floor.class))
-                {
-                  move(-1);
-               }
+               setImage(image);
+               image.scale(76,65);
+               // while(isTouching(Floor.class))
+               // {
+              //    move(-1);
+              // }
             } else{
                 setImage("mario-big.png");
             }
