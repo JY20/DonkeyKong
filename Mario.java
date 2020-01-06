@@ -1,5 +1,5 @@
 
-    import greenfoot.*;
+import greenfoot.*;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -17,7 +17,7 @@ public class Mario extends Actor
     int Lives = 3;
     int textLX = 750;
     int textLY = 600;
-    public int score = 100;
+    public int score = 1001;
     String test = "12";
     
     public Mario() {
@@ -33,7 +33,6 @@ public class Mario extends Actor
         setLocation( getX(), getY() + speed);
         try {
             findHighScore();
-            getWorld().showText(test, BackGround1.screenL/2, 100);
         } catch(IOException ioe) {
         }
         if(isTouching(Barrel.class))
@@ -41,6 +40,10 @@ public class Mario extends Actor
             removeTouching(Barrel.class);
             Lives = Lives - 1;
             BackGround1.limage[Lives].remove();
+        }
+        if(isTouching(Coin.class)){
+            removeTouching(Coin.class);
+            score += 10;
         }
         if(Lives == 0)
         {
@@ -98,20 +101,15 @@ public class Mario extends Actor
     } 
     public void findHighScore() throws IOException{
         FileReader fr = new FileReader("Score.txt");
-        FileWriter fw = new FileWriter("Score.txt", true);
         BufferedReader br = new BufferedReader(fr);
-        BufferedWriter bw = new BufferedWriter(fw);
         String oldT = br.readLine();
         br.close();
         test = oldT;
-        //int oldS = Integer.parseInt(oldT);
-        
-        /*if (score >= oldS) {
-            bw.write(score);
-        }else {
-            bw.write(oldS);
-        }
-        bw.close();*/
+        int oldS = Integer.parseInt(oldT);
+        getWorld().showText( "sss"+test, BackGround1.screenL/2, 100);
     }
-    
+    public void writeHighscore() throws IOException{
+        FileWriter fw = new FileWriter("Score.txt", true);
+        BufferedWriter bw = new BufferedWriter(fw);
+    }
 }
