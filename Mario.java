@@ -87,7 +87,7 @@ public class Mario extends Actor
         }
               while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
             
-                speed = -23;
+                speed = -25;
                  if(getY() > 555){
                     setLocation(getX(), getY() - 1);
                 }

@@ -25,20 +25,20 @@ d     */
         addObject(new Princess(), 700, 400);
         //
         for(int i= 0; i < 4; i++) {
-            addObject(new Floor(), fx[0] + (250*i), fy[0]);
+            addObject(new Floor(), fx[0] + 250*(i-2), fy[0]);
             addObject(new Floor2(), fx[1] + (250*i), fy[1]);
         } 
-        
+        addObject(new Floor(), 725,fy[0]);
         for(int i= 0; i < 6; i++) {
             addObject(new Floor(), 125+ (250*i), fy[2]);
-        }    
+        }     
         for(int i= 0; i < 3; i++) {
             limage[i] = new Lives();
             addObject(limage[i], 50+(i*50), 50);
         }
         addObject(new Coin(), 200, 200);
         addObject(new Mario(), 125, 940);
-        //addObject(new Ladder(), 450,556);
-        setPaintOrder(Mario.class, Ladder.class);
+        addObject(new Ladder(), 550,432);
+        setPaintOrder(Mario.class, Barrel.class, Ladder.class);
     }
 }

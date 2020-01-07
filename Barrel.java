@@ -28,9 +28,9 @@ public class Barrel extends Actor
             setLocation(getX() + 3, getY() - 3);
             turn(8);
           }
-          while(isTouching(Ladder.class))
+          while(isTouching(Ladder.class)&& getY()<440)
           {
-            setLocation(getX() - 3, getY() - 3);
+            setLocation(getX() + 3, getY() - 3);
             turn(0);
           }
           turn(8);
