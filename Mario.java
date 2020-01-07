@@ -72,6 +72,7 @@ public class Mario extends Actor
                 setLocation(getX(), getY() + 1);
             }
         }    
+        
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
@@ -111,10 +112,11 @@ public class Mario extends Actor
         }
               while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
             
-                speed = -25;
-                 if(getY() > 555){
-                    setLocation(getX(), getY() - 1);
-                }
+                speed = -20;
+               
+            }
+            while(isTouching(Ladder.class) && (getY()<440)){
+                setLocation(getX(), getY() - 1);
             }
           
         if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))
