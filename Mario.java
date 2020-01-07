@@ -25,7 +25,6 @@ public class Mario extends Actor
         GreenfootImage image2 = getImage();
         setImage(image);
         setImage(image2);
-        image.scale(76,65);
     }
     
     public void act() {
@@ -58,7 +57,7 @@ public class Mario extends Actor
                 setLocation(getX(), getY() - 1);
                 if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))
                 {
-                    speed = - 24;
+                    speed = - 26;
                 }
             }
         }
@@ -74,7 +73,7 @@ public class Mario extends Actor
         {
             move(-5);
             setImage(image2);
-            image.scale(76,65);
+            image2.scale(76,65);
 
         } else {
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
@@ -105,8 +104,8 @@ public class Mario extends Actor
         String oldT = br.readLine();
         br.close();
         test = oldT;
-        //int oldS = Integer.parseInt(oldT);
-        getWorld().showText( "sss"+test, BackGround1.screenL/2, 100);
+        int oldS = Integer.parseInt(oldT);
+        getWorld().showText( ""+oldS, BackGround1.screenL/2, 100);
     }
     public void writeHighscore() throws IOException{
         FileWriter fw = new FileWriter("Score.txt", true);

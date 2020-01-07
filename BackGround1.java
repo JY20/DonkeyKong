@@ -9,9 +9,9 @@ import greenfoot.*;
 public class BackGround1 extends World
 {
     public static int screenL = 1200;
-    public static int screenW = 700;
+    public static int screenW = 900;
     private int [] fx = new int [] {125, 625};
-    private int [] fy = new int [] {200, 450};
+    public int [] fy = new int [] {screenW-600, screenW-300, screenW+80};
     public static Lives [] limage = new Lives [3];
     public static int score = 0; 
     /**
@@ -30,7 +30,7 @@ d     */
         } 
         
         for(int i= 0; i < 6; i++) {
-            addObject(new Floor(), 125+ (250*i), 781);
+            addObject(new Floor(), 125+ (250*i), fy[2]);
         }    
         for(int i= 0; i < 3; i++) {
             limage[i] = new Lives();
@@ -38,7 +38,7 @@ d     */
         }
         addObject(new Coin(), 200, 200);
         addObject(new Mario(), 125, 940);
-        addObject(new Ladder(), 450,556);
+        //addObject(new Ladder(), 450,556);
         setPaintOrder(Mario.class, Ladder.class);
     }
 }

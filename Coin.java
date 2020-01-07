@@ -19,9 +19,9 @@ public class Coin extends Actor
         
     }    
     public static void changeLocation(){
-        int min = 30;
-        //int x = Math.random*
-        //int y = (int)(Math.random() * ((BackGround1.screenL - min) + 1) + min);
-        
+        int [] min = new int [] {30 ,30 ,30};
+        int [] max = new int []{BackGround1.screenW-30,50,50};
+        int y = (int)(Math.random() * ((2-0)+1));
+        int x = (int)(Math.random() * ((max[y]-min[y])+1)+min[y]);
     }
 }
