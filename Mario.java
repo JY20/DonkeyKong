@@ -13,6 +13,7 @@ public class Mario extends Actor
     String Marioimage = "mariopixelCopy.png";
     private GreenfootImage image = new GreenfootImage("mariopixel2.png");
     private GreenfootImage image2 = new GreenfootImage("marioleft.png");
+    private GreenfootImage image3 = new GreenfootImage("mariopixel.png");
     long lastTime;
     int Lives = 3;
     int textLX = 750;
@@ -23,8 +24,10 @@ public class Mario extends Actor
     public Mario() {
         GreenfootImage image = getImage();
         GreenfootImage image2 = getImage();
+        GreenfootImage image3 = getImage();
         setImage(image);
         setImage(image2);
+        setImage(image3);
     }
     
     public void act() {
@@ -72,15 +75,36 @@ public class Mario extends Actor
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
+            if(System.currentTimeMillis() - lastTime > 2000)
+        {
+            
+            lastTime = System.currentTimeMillis();
             setImage(image2);
             image2.scale(76,65);
+            
+        }else if(System.currentTimeMillis() - lastTime > 500)
+        {
+            setImage("mariopixelCopy.png");
+        }
+          
 
         } else {
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
-               setImage(image);
+               if(System.currentTimeMillis() - lastTime > 2000)
+        {
+            
+            lastTime = System.currentTimeMillis();
+             setImage(image);
                image.scale(76,65);
+            
+        }else if(System.currentTimeMillis() - lastTime > 500)
+        {
+            setImage(image3);
+            image3.scale(76,65);
+        }
+              
             } else{
                 setImage("mario-big.png");
             }
