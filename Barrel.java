@@ -1,5 +1,4 @@
-
-    import greenfoot.*;
+import greenfoot.*;
 
 /**
  * Write a description of class Barrel here.
