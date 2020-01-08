@@ -76,7 +76,7 @@ public class Mario extends Actor
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
-            if(System.currentTimeMillis() - lastTime > 2000)
+            if(System.currentTimeMillis() - lastTime > 900)
         {
             
             lastTime = System.currentTimeMillis();
@@ -93,9 +93,8 @@ public class Mario extends Actor
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
-               if(System.currentTimeMillis() - lastTime > 2000)
+               if(System.currentTimeMillis() - lastTime > 900)
         {
-            
             lastTime = System.currentTimeMillis();
              setImage(image);
                image.scale(76,65);
