@@ -11,7 +11,7 @@ public class Barrel extends Actor
     public void act() 
     {
         
-        if(isAtEdge())
+        if(this.getX() == 0)
         {
             getWorld().removeObject(this);
         } else{

@@ -109,15 +109,12 @@ public class Mario extends Actor
                 setImage("mario-big.png");
             }
         }
-              while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
-            
-                speed = -20;
-               
-            }
-            while(isTouching(Ladder.class) && (getY()<440)){
-                setLocation(getX(), getY() - 1);
-            }
-          
+        while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
+        speed = -20;
+        }
+        while(isTouching(Ladder.class) && (getY()<440)){
+            setLocation(getX(), getY() - 1);
+        }
         if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))
         {
             speed = 50;
@@ -130,7 +127,7 @@ public class Mario extends Actor
         br.close();
         test = oldT;
         int oldS = Integer.parseInt(oldT);
-        getWorld().showText( ""+oldS, BackGround1.screenL/2, 100);
+        getWorld().showText( ""+oldS, BackGround1.width/2, 100);
     }
     public void writeHighscore() throws IOException{
         FileWriter fw = new FileWriter("Score.txt", true);

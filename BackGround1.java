@@ -10,10 +10,10 @@ import java.awt.Dimension;
  */
 public class BackGround1 extends World
 {
-    public static int screenL = 1200;
-    public static int screenW = 900;
+    public static int screenL = 1500;
+    public static int screenW = 1200;
     private int [] fx = new int [] {125, 625};
-    public int [] fy = new int [] {screenW-680, screenW-330, screenW};
+    public int [] fy = new int [] {screenW-670, screenW-330, screenW};
     public static Lives [] limage = new Lives [3];
     public static int score = 0; 
     
@@ -53,7 +53,6 @@ public class BackGround1 extends World
             addObject(limage[i], 50+(i*50), 50);
         }
         addObject(new Coin(), 200, 200);
-        addObject(new Mario(), 125, 940);
         //addObject(new Ladder(), 450,556);
         setPaintOrder(Mario.class, Ladder.class);
     }
@@ -62,9 +61,12 @@ public class BackGround1 extends World
     }
     
     private void scroll () {
+        for(int i = 0; i < 3; i++) {
+            limage[i].setLocation(50+(i*50), 50);
+        }
         int dsx, dsy;
-            dsx = scrollActor.getX() - 200;
-            dsy = scrollActor.getY() - 200;
+            dsx = scrollActor.getX() - 350;
+            dsy = scrollActor.getY() - 300;
         scroller.scroll(dsx, dsy);
         
     }
