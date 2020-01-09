@@ -75,7 +75,7 @@ public Mario() {
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
-            if(System.currentTimeMillis() - lastTime > 1000)
+            if(System.currentTimeMillis() - lastTime > 900)
         {
             
             lastTime = System.currentTimeMillis();
@@ -92,7 +92,7 @@ public Mario() {
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
-               if(System.currentTimeMillis() - lastTime > 1000)
+               if(System.currentTimeMillis() - lastTime > 900)
         {
             
             lastTime = System.currentTimeMillis();
