@@ -1,3 +1,4 @@
+
 import greenfoot.*;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
@@ -109,12 +110,19 @@ public Mario() {
                 setImage("mario-big.png");
             }
         }
-              while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
-            
-                speed = -20;
-               
+            if(isTouching(Ladder.class)){
+                speed = 0;
+                if(Greenfoot.isKeyDown("up")){
+                    speed =- 5;
+                }
+                if(Greenfoot.isKeyDown("down")){
+                    speed = 5;
+                }
             }
-            while(isTouching(Ladder.class) && (getY()<375)){
+                
+            
+           
+            while(isTouching(Ladder.class) && (getY()<175)){
                 setLocation(getX(), getY() - 1);
             }
           
