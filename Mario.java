@@ -18,7 +18,7 @@ public class Mario extends Actor
     int Lives = 3;
     int textLX = 750;
     int textLY = 600;
-    public int score = 1001;
+    public int score = 0;
     String test = "12";
   
 public Mario() {
@@ -33,6 +33,7 @@ public Mario() {
     public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
+        getWorld().showText( ""+score, BackGround1.width/2-50, 100);
         try {
             findHighScore();
         } catch(IOException ioe) {
@@ -138,7 +139,7 @@ public Mario() {
         br.close();
         test = oldT;
         int oldS = Integer.parseInt(oldT);
-        getWorld().showText( ""+oldS, BackGround1.screenL/2, 100);
+        getWorld().showText( ""+oldS, BackGround1.width/2+50, 100);
     }
     public void writeHighscore() throws IOException{
         FileWriter fw = new FileWriter("Score.txt", true);
