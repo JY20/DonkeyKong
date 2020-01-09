@@ -10,10 +10,10 @@ import java.awt.Dimension;
  */
 public class BackGround1 extends World
 {
-    public static int screenL = 1500;
-    public static int screenW = 1200;
+    public static int screenL = 1200;
+    public static int screenW = 900;
     private int [] fx = new int [] {125, 625};
-    public int [] fy = new int [] {screenW-670, screenW-330, screenW};
+    public int [] fy = new int [] {screenW-680, screenW-330, screenW};
     public static Lives [] limage = new Lives [3];
     public static int score = 0; 
     
@@ -41,10 +41,10 @@ public class BackGround1 extends World
         addObject(new Princess(), 700, 400);
         //
         for(int i= 0; i < 4; i++) {
-            addObject(new Floor(), fx[0] + (250*i), fy[0]);
+            addObject(new Floor(), fx[0] + 250*(i-1), fy[0]);
             addObject(new Floor2(), fx[1] + (250*i), fy[1]);
         } 
-        
+        addObject(new Floor(), fx[0] + 850, fy[0]);
         for(int i= 0; i < 6; i++) {
             addObject(new Floor(), 125+ (250*i), fy[2]);
         }    
@@ -53,20 +53,18 @@ public class BackGround1 extends World
             addObject(limage[i], 50+(i*50), 50);
         }
         addObject(new Coin(), 200, 200);
-        //addObject(new Ladder(), 450,556);
-        setPaintOrder(Mario.class, Ladder.class);
+        //addObject(new Mario(), 125, 940);
+        addObject(new Ladder(), 800,375);
+        setPaintOrder(Mario.class,Barrel.class, Ladder.class);
     }
     public void act() {
         scroll();
     }
     
     private void scroll () {
-        for(int i = 0; i < 3; i++) {
-            limage[i].setLocation(50+(i*50), 50);
-        }
         int dsx, dsy;
-            dsx = scrollActor.getX() - 350;
-            dsy = scrollActor.getY() - 300;
+            dsx = scrollActor.getX() - 200;
+            dsy = scrollActor.getY() - 200;
         scroller.scroll(dsx, dsy);
         
     }

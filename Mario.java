@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
@@ -20,8 +19,8 @@ public class Mario extends Actor
     int textLY = 600;
     public int score = 1001;
     String test = "12";
-    
-    public Mario() {
+  
+public Mario() {
         GreenfootImage image = getImage();
         GreenfootImage image2 = getImage();
         GreenfootImage image3 = getImage();
@@ -60,7 +59,7 @@ public class Mario extends Actor
                 setLocation(getX(), getY() - 1);
                 if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))
                 {
-                    speed = - 26;
+                    speed = - 29;
                 }
             }
         }
@@ -76,7 +75,7 @@ public class Mario extends Actor
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
             move(-5);
-            if(System.currentTimeMillis() - lastTime > 900)
+            if(System.currentTimeMillis() - lastTime > 1000)
         {
             
             lastTime = System.currentTimeMillis();
@@ -93,8 +92,9 @@ public class Mario extends Actor
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
-               if(System.currentTimeMillis() - lastTime > 900)
+               if(System.currentTimeMillis() - lastTime > 1000)
         {
+            
             lastTime = System.currentTimeMillis();
              setImage(image);
                image.scale(76,65);
@@ -109,12 +109,15 @@ public class Mario extends Actor
                 setImage("mario-big.png");
             }
         }
-        while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
-        speed = -20;
-        }
-        while(isTouching(Ladder.class) && (getY()<440)){
-            setLocation(getX(), getY() - 1);
-        }
+              while(isTouching(Ladder.class) && (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))){
+            
+                speed = -20;
+               
+            }
+            while(isTouching(Ladder.class) && (getY()<375)){
+                setLocation(getX(), getY() - 1);
+            }
+          
         if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))
         {
             speed = 50;
@@ -127,7 +130,7 @@ public class Mario extends Actor
         br.close();
         test = oldT;
         int oldS = Integer.parseInt(oldT);
-        getWorld().showText( ""+oldS, BackGround1.width/2, 100);
+        getWorld().showText( ""+oldS, BackGround1.screenL/2, 100);
     }
     public void writeHighscore() throws IOException{
         FileWriter fw = new FileWriter("Score.txt", true);

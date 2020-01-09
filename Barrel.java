@@ -11,7 +11,7 @@ public class Barrel extends Actor
     public void act() 
     {
         
-        if(this.getX() == 0)
+        if(isAtEdge())
         {
             getWorld().removeObject(this);
         } else{
@@ -27,7 +27,7 @@ public class Barrel extends Actor
             setLocation(getX() + 3, getY() - 3);
             turn(8);
           }
-          while(isTouching(Ladder.class)&& getY()<440)
+          while(isTouching(Ladder.class)&& getY()< 375)
           {
             setLocation(getX() + 3, getY() - 3);
             turn(0);
@@ -37,3 +37,4 @@ public class Barrel extends Actor
     }
 }
  
+
