@@ -18,8 +18,8 @@ public class Mario extends Actor
     int Lives = 3;
     int textLX = 750;
     int textLY = 600;
-    public int score = 0;
-    String test = "12";
+    public static int score = 0;
+    public static int oldS = 0;
   
 public Mario() {
         GreenfootImage image = getImage();
@@ -50,8 +50,7 @@ public Mario() {
         }
         if(Lives == 0)
         {
-            getWorld().showText("GAME OVER", BackGround1.screenL/2, BackGround1.screenW/2);
-            Greenfoot.stop();
+            Greenfoot.setWorld(new finishScreen());
         }
         if(speed > 0)
         {
@@ -99,7 +98,7 @@ public Mario() {
             
             lastTime = System.currentTimeMillis();
              setImage(image);
-               image.scale(76,65);
+             image.scale(76,65);
             
         }else if(System.currentTimeMillis() - lastTime > 500)
         {
@@ -128,8 +127,7 @@ public Mario() {
         BufferedReader br = new BufferedReader(fr);
         String oldT = br.readLine();
         br.close();
-        test = oldT;
-        int oldS = Integer.parseInt(oldT);
+        oldS = Integer.parseInt(oldT);
         getWorld().showText( ""+oldS, BackGround1.width/2+50, 100);
     }
     public void writeHighscore() throws IOException{
