@@ -17,7 +17,7 @@ public class Shop extends Actor
         setImage("pixelshop.png");
         // Add your action code here.
         if (Greenfoot.mousePressed(this)) {
-            Greenfoot.setWorld(new BackGround1());
+            Greenfoot.setWorld(new ShopBackground());
         }
     }    
 }
