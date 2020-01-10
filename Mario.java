@@ -114,10 +114,10 @@ public Mario() {
             if(isTouching(Ladder.class)){
                 speed = 0;
                 setLocation(getX(), getY() - 1);
-                if(Greenfoot.isKeyDown("up")){
+                if(Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w")){
                     speed =- 5;
                 }
-                if(Greenfoot.isKeyDown("down")){
+                if(Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s")){
                     speed = 5;
                 }
             }
