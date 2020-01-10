@@ -113,6 +113,7 @@ public Mario() {
         }
             if(isTouching(Ladder.class)){
                 speed = 0;
+                setLocation(getX(), getY() - 1);
                 if(Greenfoot.isKeyDown("up")){
                     speed =- 5;
                 }
@@ -120,17 +121,7 @@ public Mario() {
                     speed = 5;
                 }
             }
-                
-            
-           
-            while(isTouching(Ladder.class) && (getY()<175)){
-                setLocation(getX(), getY() - 1);
-            }
-          
-        if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s"))
-        {
-            speed = 50;
-        }
+               
     } 
     public void findHighScore() throws IOException{
         FileReader fr = new FileReader("Score.txt");
