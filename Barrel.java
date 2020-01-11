@@ -32,7 +32,7 @@ public class Barrel extends Actor
             setLocation(getX() + 3, getY() - 3);
             turn(0);
           }
-          if(isTouching(Mario.class)){
+          if(isTouching(Hammer.class)){
               getWorld().removeObject(this);
               Mario.score += 50;
             }
