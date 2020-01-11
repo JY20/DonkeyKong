@@ -75,38 +75,36 @@ public Mario() {
         
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
         {
-            move(-5);
-            if(System.currentTimeMillis() - lastTime > 900)
-        {
+                move(-5);
             
-            lastTime = System.currentTimeMillis();
-            setImage(image2);
-            image2.scale(76,65);
+                if(System.currentTimeMillis() - lastTime > 900)
+                {
             
-        }else if(System.currentTimeMillis() - lastTime > 500)
-        {
-            setImage("mariopixelCopy.png");
-        }
-          
-
+                    lastTime = System.currentTimeMillis();
+                    setImage(image2);
+                    image2.scale(76,65);
+            
+             }else if(System.currentTimeMillis() - lastTime > 500)
+             {
+                 setImage("mariopixelCopy.png");
+              }
         } else {
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
                move(5);
                if(System.currentTimeMillis() - lastTime > 900)
-        {
+                {
             
-            lastTime = System.currentTimeMillis();
-             setImage(image);
-             image.scale(76,65);
+                    lastTime = System.currentTimeMillis();
+                    setImage(image);
+                    image.scale(76,65);
             
-        }else if(System.currentTimeMillis() - lastTime > 500)
-        {
-            setImage(image3);
-            image3.scale(76,65);
-        }
-              
-            } else{
+                }else if(System.currentTimeMillis() - lastTime > 500)
+                {
+                setImage(image3);
+                image3.scale(76,65);
+                }
+           } else{
                 setImage("mario-big.png");
             }
         }
