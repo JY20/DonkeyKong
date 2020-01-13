@@ -14,6 +14,11 @@ public class Floor extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+  
+    }
+    public void YPos(){
+            // Add your action code here.
+            //return getY();
+    }  
 }
+

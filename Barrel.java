@@ -22,16 +22,12 @@ public class Barrel extends Actor
             setLocation(getX() - 3, getY() - 3);
             turn(-20);
           }
-          while(isTouching(Floor.class))
+          while((isTouching(Floor.class)||isTouching(Ladder.class)) && getY()< BackGround1.floors[0].getY()+3)
           {
             setLocation(getX() + 3, getY() - 3);
             turn(8);
           }
-          while(isTouching(Ladder.class)&& getY()< 150)
-            {
-            setLocation(getX() + 3, getY() - 3);
-            turn(0);
-          }
+         
           if(isTouching(Hammer.class)){
               getWorld().removeObject(this);
               Mario.score += 50;
