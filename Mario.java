@@ -38,6 +38,11 @@ public Mario() {
             findHighScore();
         } catch(IOException ioe) {
         }
+        if(getX() < 15){
+            setLocation(getX()+15, getY());
+        } else if (getX() > BackGround1.width-15) {
+            setLocation(getX()-15, getY());
+        }
         if(isTouching(Barrel.class))
         {
             removeTouching(Barrel.class);

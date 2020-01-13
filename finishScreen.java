@@ -22,6 +22,5 @@ public class finishScreen extends World
         showText( ""+oldS, BackGround1.width/2+50, 100);
         showText( ""+userScore, BackGround1.width/2-50, 100);
         addObject(new replayButton(), BackGround1.width/2, BackGround1.height/3);
-        addObject(new shopButton(), BackGround1.width/2, BackGround1.height/2);
     }
 }

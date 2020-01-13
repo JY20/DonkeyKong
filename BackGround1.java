@@ -12,8 +12,8 @@ public class BackGround1 extends World
 {
     public static int screenL = 1500;
     public static int screenW = 1200;
-    private int [] fx = new int [] {125, 625};
-    public int [] fy = new int [] {screenW-670, screenW-330, screenW};
+    public static int [] fx = new int [] {125, 625};
+    public static int [] fy = new int [] {screenW-670, screenW-330, screenW};
     public static Lives [] limage = new Lives [3];
     public static int score = 0; 
     
@@ -26,6 +26,7 @@ public class BackGround1 extends World
     private static int floorDist = 75;
     private Scroller scroller;
     private Actor scrollActor;
+    long lT = System.currentTimeMillis();;
     private int backHeight, backWidth;
     public BackGround1()
     {    
@@ -48,6 +49,7 @@ public class BackGround1 extends World
       
         floors[0] = new Floor();
         addObject(floors[0], fx[0] + 850, fy[0]);
+        addObject(new Teleport(), screenL, fy[1]);
         for(int i= 0; i < 6; i++) {
             floors[i+1] = new Floor();
             addObject(floors[i+1], 125 + (250*i), fy[2]);
@@ -56,13 +58,20 @@ public class BackGround1 extends World
             limage[i] = new Lives();
             addObject(limage[i], 50+(i*50), 50);
         }
-        addObject(new Coin(), 200, 200);
-        //addObject(new Mario(), 125, 940);
         addObject(new Ladder(), 800,fy[0]+150);
         setPaintOrder(Mario.class,Barrel.class, Ladder.class);
     }
     public void act() {
+        /*if (System.currentTimeMillis() - lT > 200) {
+            lT = System.currentTimeMillis();
+            int [] min = new int [] {30 ,500 , 30};
+            int [] max = new int []{BackGround1.screenL-30, BackGround1.screenL-30, BackGround1.screenL-300};
+            int y = (int)(Math.random() * ((2-0)+1));
+            //int x = (int)(Math.random() * ((max[y]-min[y])+1)+min[y]);
+            addObject(new Coin(),500 ,fy[y]-200);
+        }*/
         scroll();
+        
     }
     
     private void scroll () {
