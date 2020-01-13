@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ShopBackground extends World
 {
-
+    public static int screenL = 1500;
+    public static int screenW = 1200;
     /**
      * Constructor for objects of class ShopBackground.
      * 
