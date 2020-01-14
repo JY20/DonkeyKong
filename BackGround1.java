@@ -22,11 +22,9 @@ public class BackGround1 extends World
     public static int width = (int)(screenSize.getWidth()-300); 
     public static int height = (int)(screenSize.getHeight()/1.25);
     public static Floor[] floors = new Floor[7];
-    
     private static int floorDist = 75;
     private Scroller scroller;
     private Actor scrollActor;
-    long lT = System.currentTimeMillis();;
     private int backHeight, backWidth;
     public BackGround1()
     {    
@@ -49,7 +47,6 @@ public class BackGround1 extends World
       
         floors[0] = new Floor();
         addObject(floors[0], fx[0] + 850, fy[0]);
-        addObject(new Teleport(), screenL, fy[1]);
         for(int i= 0; i < 6; i++) {
             floors[i+1] = new Floor();
             addObject(floors[i+1], 125 + (250*i), fy[2]);
@@ -62,14 +59,6 @@ public class BackGround1 extends World
         setPaintOrder(Mario.class,Barrel.class, Ladder.class);
     }
     public void act() {
-        /*if (System.currentTimeMillis() - lT > 200) {
-            lT = System.currentTimeMillis();
-            int [] min = new int [] {30 ,500 , 30};
-            int [] max = new int []{BackGround1.screenL-30, BackGround1.screenL-30, BackGround1.screenL-300};
-            int y = (int)(Math.random() * ((2-0)+1));
-            //int x = (int)(Math.random() * ((max[y]-min[y])+1)+min[y]);
-            addObject(new Coin(),500 ,fy[y]-200);
-        }*/
         scroll();
         
     }

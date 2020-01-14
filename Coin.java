@@ -16,12 +16,10 @@ public class Coin extends Actor
     public void act() 
     {
         // Add your action code here
-        
+        if (isTouching(Floor.class) || isTouching(Coin.class)) {
+            int y = (int)(Math.random() * ((BackGround1.height-30)+1)+30);
+            int x = (int)(Math.random() * ((BackGround1.width-15)+1)+15);
+            setLocation(x, y);
+        }
     }    
-    public static void changeLocation(){
-        int [] min = new int [] {30 ,30 ,30};
-        int [] max = new int []{BackGround1.screenW-30,50,50};
-        int y = (int)(Math.random() * ((2-0)+1));
-        int x = (int)(Math.random() * ((max[y]-min[y])+1)+min[y]);
-    }
 }

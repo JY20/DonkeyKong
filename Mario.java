@@ -18,7 +18,7 @@ public class Mario extends Actor
     int Lives = 3;
     int textLX = 750;
     int textLY = 600;
-    public static int score = 0;
+    int JumpS = - 29;
     public static int oldS = 0;
   
 public Mario() {
@@ -33,7 +33,7 @@ public Mario() {
     public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
-        getWorld().showText( ""+score, BackGround1.width/2-50, 100);
+        getWorld().showText( ""+BackGround1.score, BackGround1.width/2-50, 100);
         try {
             findHighScore();
         } catch(IOException ioe) {
@@ -51,7 +51,7 @@ public Mario() {
         }
         if(isTouching(Coin.class)){
             removeTouching(Coin.class);
-            score += 10;
+            BackGround1.score += 10;
         }
         if(Lives == 0)
         {
@@ -65,7 +65,7 @@ public Mario() {
                 setLocation(getX(), getY() - 1);
                 if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w"))
                 {
-                    speed = - 29;
+                    speed = JumpS;
                 }
             }
         }
