@@ -21,7 +21,7 @@ public class BackGround1 extends World
     public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
     public static int width = (int)(screenSize.getWidth()-300); 
     public static int height = (int)(screenSize.getHeight()/1.25);
-    public static Floor[] floors = new Floor[7];
+    public static Floor[] floors = new Floor[11];
     private static int floorDist = 75;
     private Scroller scroller;
     private Actor scrollActor;
@@ -41,7 +41,8 @@ public class BackGround1 extends World
         addObject(new Princess(), 700, 400);
         //
         for(int i= 0; i < 4; i++) {
-            addObject(new Floor(), fx[0] + 250*(i-1), fy[0]);
+            floors[i+7] = new Floor();
+            addObject(floors[i+7], fx[0] + 250*(i-1), fy[0]);
             addObject(new Floor2(), fx[1] + (250*i), fy[1]);
         } 
       

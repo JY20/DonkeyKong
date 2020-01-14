@@ -27,7 +27,10 @@ public class Barrel extends Actor
             setLocation(getX() + 3, getY() - 3);
             turn(8);
           }
-         
+          while(isTouching(Floor.class) && getY() > BackGround1.floors[7].getY()){
+              setLocation(getX() + 3, getY() - 3);
+            turn(8);
+            }
           if(isTouching(Hammer.class)){
               getWorld().removeObject(this);
               BackGround1.score += 50;
