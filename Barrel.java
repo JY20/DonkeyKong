@@ -11,7 +11,7 @@ public class Barrel extends Actor
     public void act() 
     {
         setImage("barrel60.png");
-        if(this.getX() == BackGround1.width)
+        if(this.getX() == BackGround1.screenL)
         {
             getWorld().removeObject(this);
         } else{
