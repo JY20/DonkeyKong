@@ -14,7 +14,6 @@ public class CoinField extends World
      * 
      */
     long lT = System.currentTimeMillis();
-    public static int numKeys = 0;
     
     public CoinField()
     {    
@@ -28,8 +27,6 @@ public class CoinField extends World
         for(int i= 0; i < 6; i++) {
             addObject(new Floor(), 125 + (250*i), BackGround1.height);
         }  
-        
-        addObject(new key(), BackGround1.width-50, 50);
         Mario mario = new Mario();
         addObject(mario, 30, BackGround1.height-30);
         addObject(new leftArrow(), 50, ys[0]-50 );

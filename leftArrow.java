@@ -17,7 +17,7 @@ public class leftArrow extends Actor
         // Add your action code here.
         if (isTouching(Mario.class)) {
             BackGround1.MarioSpot[0] = BackGround1.screenL-200;
-            BackGround1.MarioSpot[1] = BackGround1.fy[2]-100;
+            BackGround1.MarioSpot[1] = BackGround1.fy[1]-100;
             Greenfoot.setWorld(new BackGround1());
         }
     }    

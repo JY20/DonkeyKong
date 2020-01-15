@@ -17,6 +17,7 @@ public class BackGround1 extends World
     public static Lives [] limage = new Lives [3];
     public static int score = 0; 
     public static int [] MarioSpot = new int []{10, 10};
+    public static int key = 0;
     // Gets resolution of current display
     public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
     public static int width = (int)(screenSize.getWidth()-300); 
@@ -38,6 +39,8 @@ public class BackGround1 extends World
         addObject(scrollActor, MarioSpot[0], MarioSpot[1]);
 
         addObject(new DK(), 200, fy[0]-60);
+        addObject(new key(), 200, fy[0]-60);
+        addObject(new key(), screenL-120, 200);
         addObject(new Princess(), 700, 400);
         //
         for(int i= 0; i < 4; i++) {

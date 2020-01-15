@@ -33,7 +33,8 @@ public Mario() {
     public void act() {
         speed = speed + 1;
         setLocation( getX(), getY() + speed);
-        getWorld().showText( ""+BackGround1.score, BackGround1.width/2-50, 100);
+        getWorld().showText( "Score "+BackGround1.score, BackGround1.width/2-100,100);
+        getWorld().showText( "Number of keys    "+BackGround1.key, BackGround1.width/2, 50);
         try {
             findHighScore();
         } catch(IOException ioe) {
@@ -49,9 +50,13 @@ public Mario() {
             Lives = Lives - 1;
             BackGround1.limage[Lives].remove();
         }
-        if(isTouching(Coin.class)){
+        else if(isTouching(Coin.class)){
             removeTouching(Coin.class);
             BackGround1.score += 10;
+        }
+        else if (isTouching(key.class)) {
+            removeTouching(key.class);
+            BackGround1.key ++;
         }
         if(Lives == 0)
         {
@@ -131,7 +136,7 @@ public Mario() {
         String oldT = br.readLine();
         br.close();
         oldS = Integer.parseInt(oldT);
-        getWorld().showText( ""+oldS, BackGround1.width/2+50, 100);
+        getWorld().showText( "High Score "+oldS, BackGround1.width/2+100, 100);
     }
     public void writeHighscore() throws IOException{
         FileWriter fw = new FileWriter("Score.txt", true);
