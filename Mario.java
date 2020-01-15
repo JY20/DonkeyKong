@@ -35,6 +35,8 @@ public Mario() {
         setLocation( getX(), getY() + speed);
         getWorld().showText( "Score "+BackGround1.score, BackGround1.width/2-100,100);
         getWorld().showText( "Number of keys    "+BackGround1.key, BackGround1.width/2, 50);
+        BackGround1.MarioSpot[0] = getX();
+        BackGround1.MarioSpot[1] = getY();
         try {
             findHighScore();
         } catch(IOException ioe) {
