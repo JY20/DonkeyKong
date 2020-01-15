@@ -15,6 +15,7 @@ public class BackGround1 extends World
     public static int [] fx = new int [] {125, 625};
     public static int [] fy = new int [] {screenW-670, screenW-330, screenW};
     public static Lives [] limage = new Lives [3];
+    public static shopButton shopB = new shopButton();
     public static int score = 0; 
     public static int [] MarioSpot = new int []{10, 10};
     public static int key = 0;
@@ -51,6 +52,7 @@ public class BackGround1 extends World
       
         floors[0] = new Floor();
         addObject(floors[0], fx[0] + 850, fy[0]);
+        addObject(shopB, 0,0);
         for(int i= 0; i < 6; i++) {
             floors[i+1] = new Floor();
             addObject(floors[i+1], 125 + (250*i), fy[2]);
@@ -65,13 +67,13 @@ public class BackGround1 extends World
     }
     public void act() {
         scroll();
-        
     }
     
     private void scroll () {
         for(int i = 0; i < 3; i++) {
             limage[i].setLocation(50+(i*50), 50);
         }
+        shopB.setLocation(200, 150);
         int dsx, dsy;
             dsx = scrollActor.getX() - width/2;
             dsy = scrollActor.getY() - height/2;

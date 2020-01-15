@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ShopBackground extends World
 {
-    public static int screenL = 1500;
-    public static int screenW = 1200;
     /**
      * Constructor for objects of class ShopBackground.
      * 
@@ -17,6 +15,7 @@ public class ShopBackground extends World
     public ShopBackground()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(BackGround1.width, BackGround1.height, 1); 
+        addObject(new GoBackButton(), BackGround1.width/2, BackGround1.height/2);
     }
 }

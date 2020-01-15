@@ -14,9 +14,10 @@ public class shopButton extends Actor
         // Add your action code here.
         setImage(image);
         image.scale(120,120);
+        setLocation(BackGround1.width, 150);;
         // Add your action code here.
         if (Greenfoot.mousePressed(this)) {
             Greenfoot.setWorld(new ShopBackground());
-    }    
-}
+        }    
+    }
 }
