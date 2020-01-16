@@ -25,9 +25,16 @@ public class finishScreen extends World
         showText( ""+oldS, BackGround1.width/2+50, 100);
         showText( ""+userScore, BackGround1.width/2-50, 100);
         addObject(new replayButton(), BackGround1.width/2, BackGround1.height/2);
+        if (userScore >= oldS) {
+            try {
+                writeHighscore(userScore);
+            } catch(IOException ioe) {
+            }
+        }
+        showText( "sss"+userScore, BackGround1.width/2-50, 100);
     }
     public void writeHighscore(int score) throws IOException{
-        FileWriter fw = new FileWriter("Score.txt", true);
+        FileWriter fw = new FileWriter("Score.txt", false);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(score);
         bw.close();

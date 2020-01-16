@@ -19,6 +19,7 @@ public class leftArrow extends Actor
             BackGround1.MarioSpot[0] = BackGround1.screenL-200;
             BackGround1.MarioSpot[1] = BackGround1.fy[1]-100;
             //BackGround1.onetime = 0;
+            BackGround1.mainPlayer.Lives = CoinField.mario.Lives;
             Greenfoot.setWorld(new BackGround1());
         }
     }    

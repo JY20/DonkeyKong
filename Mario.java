@@ -13,13 +13,13 @@ public class Mario extends Actor
     private GreenfootImage image2 = new GreenfootImage("marioleft.png");
     private GreenfootImage image3 = new GreenfootImage("mariopixel.png");
     long lastTime;
-    int Lives = 3;
+    public static int Lives = 3;
     int textLX = 750;
     int textLY = 600;
     int JumpS = - 29;
     public static int oldS = 0;
   
-public Mario() {
+    public Mario() {
         GreenfootImage image = getImage();
         GreenfootImage image2 = getImage();
         GreenfootImage image3 = getImage();

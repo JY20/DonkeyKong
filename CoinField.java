@@ -14,6 +14,7 @@ public class CoinField extends World
      * 
      */
     long lT = System.currentTimeMillis();
+    public static Mario mario = new Mario();
     
     public CoinField()
     {    
@@ -26,8 +27,8 @@ public class CoinField extends World
         }
         for(int i= 0; i < 6; i++) {
             addObject(new Floor(), 125 + (250*i), BackGround1.height);
-        }  
-        Mario mario = new Mario();
+        }
+        mario.Lives = BackGround1.mainPlayer.Lives; 
         addObject(mario, 100, BackGround1.height-30);
         addObject(new leftArrow(), 50, ys[0]-50 );
         mario.JumpS = -20;

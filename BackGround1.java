@@ -18,6 +18,7 @@ public class BackGround1 extends World
     public static int score = 0; 
     public static int [] MarioSpot = new int []{10, 10};
     public static int key = 0;
+    public static Mario mainPlayer = new Mario();
     public static key [] keys = new key []{new key(),new key(),new key()}; 
     public static boolean [] findOrnot = new boolean []{true, true, true};
     // Gets resolution of current display
@@ -36,7 +37,7 @@ public class BackGround1 extends World
         backHeight = backImage.getHeight();
         backWidth = backImage.getWidth();
         scroller = new Scroller(this, backImage, screenL, screenW);
-        scrollActor = new Mario();
+        scrollActor = mainPlayer;
         // Adding actor
         addObject(scrollActor, MarioSpot[0], MarioSpot[1]);
 
@@ -67,7 +68,7 @@ public class BackGround1 extends World
             floors[i+1] = new Floor();
             addObject(floors[i+1], 125 + (250*i), fy[2]);
         }    
-        for(int i= 0; i < 3; i++) {
+        for(int i= 0; i < mainPlayer.Lives; i++) {
             limage[i] = new Lives();
             addObject(limage[i], 50+(i*50), 50);
         }
