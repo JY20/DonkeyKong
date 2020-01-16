@@ -6,6 +6,4 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ findHighScore()
-comment4.params=
-comment4.target=void\ writeHighscore()
-numComments=5
+numComments=4

@@ -1,4 +1,7 @@
 import greenfoot.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Write a description of class Finish here.
@@ -23,4 +26,11 @@ public class finishScreen extends World
         showText( ""+userScore, BackGround1.width/2-50, 100);
         addObject(new replayButton(), BackGround1.width/2, BackGround1.height/2);
     }
+    public void writeHighscore(int score) throws IOException{
+        FileWriter fw = new FileWriter("Score.txt", true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(score);
+        bw.close();
+    }
+    
 }

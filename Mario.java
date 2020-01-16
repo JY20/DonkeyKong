@@ -1,8 +1,6 @@
 
 import greenfoot.*;
-import java.io.BufferedWriter;
 import java.io.BufferedReader;
-import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
@@ -135,9 +133,5 @@ public Mario() {
         br.close();
         oldS = Integer.parseInt(oldT);
         getWorld().showText( "High Score "+oldS, BackGround1.width/2+100, 100);
-    }
-    public void writeHighscore() throws IOException{
-        FileWriter fw = new FileWriter("Score.txt", true);
-        BufferedWriter bw = new BufferedWriter(fw);
     }
 }
