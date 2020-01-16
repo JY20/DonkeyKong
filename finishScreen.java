@@ -31,13 +31,12 @@ public class finishScreen extends World
             } catch(IOException ioe) {
             }
         }
-        showText( "sss"+userScore, BackGround1.width/2-50, 100);
+        BackGround1.mainPlayer.Lives = 3;
     }
     public void writeHighscore(int score) throws IOException{
         FileWriter fw = new FileWriter("Score.txt", false);
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(score);
+        bw.write(Integer.toString(score));
         bw.close();
     }
-    
 }
