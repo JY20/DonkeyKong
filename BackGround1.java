@@ -30,9 +30,13 @@ public class BackGround1 extends World
     private Scroller scroller;
     private Actor scrollActor;
     private int backHeight, backWidth;
+     GreenfootSound backgroundMusic = new GreenfootSound("Donkey Kong Theme song.mp3");
+     
     public BackGround1()
     {    
+        
         super(width, height, 1, false);
+        backgroundMusic.playLoop();
         GreenfootImage backImage = new GreenfootImage("board.jpg");
         backHeight = backImage.getHeight();
         backWidth = backImage.getWidth();
