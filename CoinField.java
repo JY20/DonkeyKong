@@ -20,8 +20,8 @@ public class CoinField extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(BackGround1.width, BackGround1.height, 1); 
-        int [] xs = new int [] {BackGround1.width-830, BackGround1.width-530, BackGround1.width-230};
-        int [] ys = new int [] {BackGround1.height-356, BackGround1.height-176, BackGround1.height-356};
+        int [] xs = new int [] {BackGround1.width/6, (BackGround1.width/6)*3, (BackGround1.width/6)*5};
+        int [] ys = new int [] {BackGround1.height/6, (BackGround1.height/6)*3, (BackGround1.height/6)*5};
         for(int i  = 0; i < 3; i++) {
             addObject(new Floor(), xs[i], ys[i]);
         }
