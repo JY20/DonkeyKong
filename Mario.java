@@ -43,6 +43,8 @@ public class Mario extends Actor
             setLocation(getX()+15, getY());
         } else if (getX() > BackGround1.width-15) {
             setLocation(getX()-15, getY());
+        } else if (getY() > BackGround1.height-15) {
+            setLocation(getX(), getY()+15);
         }
         if(isTouching(Barrel.class))
         {

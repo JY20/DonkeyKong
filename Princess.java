@@ -14,6 +14,9 @@ public class Princess extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        if(isTouching(Mario.class) && BackGround1.key == 3) {
+            getWorld().removeObject(this);
+            BackGround1.score = BackGround1.score*2;
+        }
     }    
 }

@@ -42,6 +42,7 @@ public class BackGround1 extends World
         addObject(scrollActor, MarioSpot[0], MarioSpot[1]);
 
         addObject(new DK(), 200, fy[0]-60);
+        addObject(new Princess(), 70, fy[0]-60);
         if(findOrnot[0] == true) {
             addObject(keys[0], 200, fy[0]-60);
             keys[0].id = 0;
@@ -50,12 +51,10 @@ public class BackGround1 extends World
             addObject(keys[1], screenL-120, 200);
             keys[1].id = 1;
         }
-        if(findOrnot[2] == true && score >= 1000) {
+        if(findOrnot[2] == true && score >= 10) {
             addObject(keys[2], 125, 900);
             keys[2].id = 2;
         }
-        addObject(new Princess(), 700, 400);
-        //
         for(int i= 0; i < 4; i++) {
             floors[i+7] = new Floor();
             addObject(floors[i+7], fx[0] + 250*(i-1), fy[0]);
