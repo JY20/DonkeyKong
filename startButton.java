@@ -14,7 +14,6 @@ public class startButton extends Actor
      */
     public void act() 
     {   
-        setImage("startbutton2.png");
         // Add your action code here.
         if (Greenfoot.mousePressed(this)) {
             BackGround1.MarioSpot[0] = 125;

@@ -14,7 +14,6 @@ public class replayButton extends Actor
      */
     public void act() 
     {
-        setImage("Replaybutton.png");
         // Add your action code here.
         if (Greenfoot.mousePressed(this)) {
             BackGround1.MarioSpot[0] = 125;

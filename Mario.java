@@ -56,10 +56,6 @@ public Mario() {
             removeTouching(Coin.class);
             BackGround1.score += 10;
         }
-        else if (isTouching(key.class)) {
-            removeTouching(key.class);
-            BackGround1.key ++;
-        }
         if(Lives == 0)
         {
             Greenfoot.setWorld(new finishScreen());

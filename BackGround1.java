@@ -19,6 +19,8 @@ public class BackGround1 extends World
     public static int score = 0; 
     public static int [] MarioSpot = new int []{10, 10};
     public static int key = 0;
+    public static key [] keys = new key []{new key(),new key(),new key()}; 
+    public static boolean [] findOrnot = new boolean []{true, true, true};
     // Gets resolution of current display
     public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
     public static int width = (int)(screenSize.getWidth()-300); 
@@ -40,8 +42,14 @@ public class BackGround1 extends World
         addObject(scrollActor, MarioSpot[0], MarioSpot[1]);
 
         addObject(new DK(), 200, fy[0]-60);
-        addObject(new key(), 200, fy[0]-60);
-        addObject(new key(), screenL-120, 200);
+        if(findOrnot[0] == true) {
+            addObject(keys[0], 200, fy[0]-60);
+            keys[0].id = 0;
+        }
+        if(findOrnot[1] == true) {
+            addObject(keys[1], screenL-120, 200);
+            keys[1].id = 1;
+        }
         addObject(new Princess(), 700, 400);
         //
         for(int i= 0; i < 4; i++) {

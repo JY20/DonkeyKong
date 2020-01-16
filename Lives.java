@@ -14,7 +14,6 @@ public class Lives extends Actor
      */
     public void act() 
     {
-        setImage("output-onlinepngtools.png");
     }    
     public void remove () {
         getWorld().removeObject(this);
