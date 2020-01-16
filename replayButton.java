@@ -20,6 +20,9 @@ public class replayButton extends Actor
             BackGround1.MarioSpot[1] = 940;
             BackGround1.score = 0;
             BackGround1.key = 0;
+            for(int i = 0; i < BackGround1.findOrnot.length; i++){
+                BackGround1.findOrnot[i] = true;
+            }
             Greenfoot.setWorld(new BackGround1());
         }
     }    

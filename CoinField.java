@@ -31,7 +31,7 @@ public class CoinField extends World
         mario.Lives = BackGround1.mainPlayer.Lives; 
         addObject(mario, 100, BackGround1.height-30);
         addObject(new leftArrow(), 50, ys[0]-50 );
-        mario.JumpS = -(20);
+        mario.JumpS = -(24);
     }
     public void act() {
         if (System.currentTimeMillis() - lT > 2000) {
