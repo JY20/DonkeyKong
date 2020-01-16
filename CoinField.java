@@ -29,7 +29,7 @@ public class CoinField extends World
             addObject(new Floor(), 125 + (250*i), BackGround1.height);
         }
         mario.Lives = BackGround1.mainPlayer.Lives; 
-        addObject(mario, 100, BackGround1.height-30);
+        addObject(mario, 100, BackGround1.height-50);
         addObject(new leftArrow(), 50, ys[0]-50 );
         mario.JumpS = -(24);
     }

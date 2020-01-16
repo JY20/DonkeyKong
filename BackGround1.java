@@ -51,7 +51,7 @@ public class BackGround1 extends World
             addObject(keys[1], screenL-120, 200);
             keys[1].id = 1;
         }
-        if(findOrnot[2] == true && score >= 10) {
+        if(findOrnot[2] == true && score >= 1000) {
             addObject(keys[2], 125, 900);
             keys[2].id = 2;
         }
