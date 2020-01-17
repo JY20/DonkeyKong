@@ -10,7 +10,7 @@ import java.awt.Dimension;
  */
 public class BackGround1 extends World
 {
-    public static int screenL = 1500; //used for screen size
+    public static int screenL = 1500;
     public static int screenW = 1200;
     public static int [] fx = new int [] {125, 625};
     public static int [] fy = new int [] {screenW-670, screenW-330, screenW};
@@ -30,10 +30,11 @@ public class BackGround1 extends World
     private Scroller scroller;
     private Actor scrollActor;
     private int backHeight, backWidth;
-    GreenfootSound backgroundMusic = new GreenfootSound("Donkey Kong Theme song.mp3");
+     GreenfootSound backgroundMusic = new GreenfootSound("Donkey Kong Theme song.mp3");
      
     public BackGround1()
     {    
+        
         super(width, height, 1, false);
         backgroundMusic.playLoop();
         GreenfootImage backImage = new GreenfootImage("board.jpg");
@@ -63,6 +64,7 @@ public class BackGround1 extends World
             addObject(floors[i+7], fx[0] + 250*(i-1), fy[0]);
             addObject(new Floor2(), fx[1] + (250*i), fy[1]);
         } 
+      
         floors[0] = new Floor();
         addObject(floors[0], fx[0] + 850, fy[0]);
         for(int i= 0; i < 6; i++) {
