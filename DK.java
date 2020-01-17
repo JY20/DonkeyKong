@@ -1,16 +1,10 @@
 import greenfoot.*;
 public class DK extends Actor
 {
-    long lastTime;
-    public static int [] levels = new int [] {BackGround1.screenW-670, BackGround1.screenW-330, BackGround1.screenW};
+    long lastTime; // Last time donkey kong rolls a barrel
+   
     public void act() 
-    {
-        if(isTouching(Mario.class))
-        {
-            //Greenfoot.setWorld(new Finish());
-            //Greenfoot.setWorld(new Background2());
-            //Greenfoot.stop();
-        }
+    {// Rolls the barrel
         if(System.currentTimeMillis() - lastTime > 4000)
         {
             

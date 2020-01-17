@@ -15,8 +15,8 @@ public class Coin extends Actor
      */
     public void act() 
     {
-        // Add your action code here
-        if (isTouching(Floor.class) || isTouching(Coin.class)) {
+        // When coin in touching other coins or the floor then go to new spot
+        if (isTouching(Floor.class) || isTouching(Coin.class)) { 
             int y = (int)(Math.random() * ((BackGround1.height-30)+1)+30);
             int x = (int)(Math.random() * ((BackGround1.width-15)+1)+15);
             setLocation(x, y);

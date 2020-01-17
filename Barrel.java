@@ -8,10 +8,10 @@ import greenfoot.*;
  */
 public class Barrel extends Actor
 {
-    public void act() 
+    public void act()  // The barrel movement on different floors
     {
         setImage("barrel60.png");
-        if(this.getX() == BackGround1.screenL)
+        if(this.getX() == BackGround1.screenW) // When the barrel is at the edge of the world its removed
         {
             getWorld().removeObject(this);
         } else{

@@ -13,9 +13,9 @@ public class Lives extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+    { // lives class
     }    
-    public void remove () {
+    public void remove () { // remove function
         getWorld().removeObject(this);
     }
 }

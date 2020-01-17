@@ -13,7 +13,7 @@ public class Floor2 extends Floor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+    { // Floor 2
         // Add your action code here.
     }    
 }

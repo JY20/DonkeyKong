@@ -15,7 +15,7 @@ public class startScreen extends World
      */
     public startScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        //When start button is pressed then go to background1
         super(BackGround1.width, BackGround1.height, 1);
         addObject(new startButton(), BackGround1.width/2, BackGround1.height/2 );
     }

@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -39,29 +38,29 @@ public class Mario extends Actor
             findHighScore();
         } catch(IOException ioe) {
         }
-        if(getX() < 15){
+        if(getX() < 15){ // making mario stay inside the world
             setLocation(getX()+15, getY());
         } else if (getX() > BackGround1.width-15) {
             setLocation(getX()-15, getY());
         } else if (getY() > BackGround1.height-15) {
             setLocation(getX(), getY()+15);
         }
-        if(isTouching(Barrel.class))
+        if(isTouching(Barrel.class)) // When it's touching the barrel class then remove the barrel and decrease the lives
         {
             removeTouching(Barrel.class);
             Lives = Lives - 1;
             BackGround1.limage[Lives].remove();
         }
-        else if(isTouching(Coin.class)){
+        else if(isTouching(Coin.class)){ // When it's touching the coin class then remove the coin and increase the live
             removeTouching(Coin.class);
             BackGround1.score += 10;
         }
-        if(Lives == 0)
+        if(Lives == 0) // When lives is 0 then set the world to finish screen
         {
             Greenfoot.setWorld(new finishScreen());
         }
         if(speed > 0)
-        {
+        { // When mario touch the floor no gravity will apply to it
             while(isTouching(Floor.class))
             {
                 speed = 0;
@@ -73,7 +72,7 @@ public class Mario extends Actor
             }
         }
         if(speed <= 0)
-        {
+        { 
             while(isTouching(Floor.class))
             {
                 speed = 0;
@@ -82,7 +81,7 @@ public class Mario extends Actor
         }    
         
         if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a"))
-        {
+        { // mario movement with the keys
                 move(-5);
             
                 if(System.currentTimeMillis() - lastTime > 900)
@@ -99,7 +98,7 @@ public class Mario extends Actor
         } else {
             if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d"))
             {
-               move(5);
+                move(5);
                if(System.currentTimeMillis() - lastTime > 900)
                 {
             
@@ -109,14 +108,14 @@ public class Mario extends Actor
             
                 }else if(System.currentTimeMillis() - lastTime > 500)
                 {
-                setImage(image3);
-                image3.scale(76,65);
+                    setImage(image3);
+                    image3.scale(76,65);
                 }
            } else{
                 setImage("mario-big.png");
             }
         }
-            if(isTouching(Ladder.class)){
+            if(isTouching(Ladder.class)){ // Mario movement when keys are pressed and touching the ladder
                 speed = 0;
                 setLocation(getX(), getY() - 1);
                 if(Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w")){
@@ -125,10 +124,13 @@ public class Mario extends Actor
                 if(Greenfoot.isKeyDown("down")||Greenfoot.isKeyDown("s")){
                     speed = 5;
                 }
+                if((Greenfoot.isKeyDown("up")||Greenfoot.isKeyDown("w"))&& getY()< BackGround1.floors[0].getY()+3){
+                    speed = JumpS;
+                }
             }
                
     } 
-    public void findHighScore() throws IOException{
+    public void findHighScore() throws IOException{ // Find the high score and show it 
         FileReader fr = new FileReader("Score.txt");
         BufferedReader br = new BufferedReader(fr);
         String oldT = br.readLine();

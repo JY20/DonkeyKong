@@ -17,8 +17,8 @@ public class finishScreen extends World
      * 
      */
     public finishScreen()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    { // When the player dead it check for high score and change it if it's greater than high score of the game
+        // It let user play again when replaybutton is pressed
         super(BackGround1.width, BackGround1.height, 1); 
         int userScore = BackGround1.score;
         int oldS = Mario.oldS;
@@ -33,7 +33,7 @@ public class finishScreen extends World
         }
         BackGround1.mainPlayer.Lives = 3;
     }
-    public void writeHighscore(int score) throws IOException{
+    public void writeHighscore(int score) throws IOException{ // Rewrite the high score
         FileWriter fw = new FileWriter("Score.txt", false);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(Integer.toString(score));
