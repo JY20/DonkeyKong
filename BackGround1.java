@@ -32,12 +32,12 @@ public class BackGround1 extends World
     private Scroller scroller;
     private Actor scrollActor;
     private int backHeight, backWidth;
-    GreenfootSound backgroundMusic = new GreenfootSound("Donkey Kong Theme song.mp3");
+   
      
     public BackGround1()
     {    // Add the objects 
         super(width, height, 1, false);
-        backgroundMusic.playLoop();
+        
         GreenfootImage backImage = new GreenfootImage("board.jpg");
         backHeight = backImage.getHeight();
         backWidth = backImage.getWidth();
@@ -67,7 +67,7 @@ public class BackGround1 extends World
             addObject(floors[i+7], fx[0] + 250*(i-1), fy[0]);
             addObject(new Floor2(), fx[1] + (250*i), fy[1]);
         } 
-      
+            
         floors[0] = new Floor();
         addObject(floors[0], fx[0] + 850, fy[0]);
         for(int i= 0; i < 6; i++) {
@@ -81,11 +81,13 @@ public class BackGround1 extends World
         addObject(new rightArrow(), screenW-50, fy[2]-100 );
         addObject(new Ladder(), 800,fy[0]+150);
         setPaintOrder(Mario.class,Barrel.class, Ladder.class);
+       
     }
     public void act() { // Keep auto scroll when the main players moves
         scroll();
     }
     
+ 
     private void scroll () { // Functions that auto scroll 
         for(int i = 0; i < 3; i++) {
             limage[i].setLocation(50+(i*50), 50);

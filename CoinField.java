@@ -19,6 +19,7 @@ public class CoinField extends World
     public CoinField()
     {   //Add the objects
         super(BackGround1.width, BackGround1.height, 1); 
+        
         int [] xs = new int [] {BackGround1.width/6, (BackGround1.width/6)*3, (BackGround1.width/6)*5};
         int [] ys = new int [] {BackGround1.height/6, (BackGround1.height/6)*3, (BackGround1.height/6)*5};
         for(int i  = 0; i < 3; i++) {

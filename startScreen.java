@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class startScreen extends World
 {
-
+ GreenfootSound backgroundMusic = new GreenfootSound("Donkey Kong Theme song.mp3");
     /**
      * Constructor for objects of class Background2.
      * 
@@ -17,6 +17,8 @@ public class startScreen extends World
     {    
         //When start button is pressed then go to background1
         super(BackGround1.width, BackGround1.height, 1);
+        //plays the music
+        backgroundMusic.playLoop();
         addObject(new startButton(), BackGround1.width/2, BackGround1.height/2 );
     }
 }

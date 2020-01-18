@@ -22,11 +22,13 @@ public class Barrel extends Actor
             setLocation(getX() - 3, getY() - 3);
             turn(-20);
           }
+          //while the barrel is touching the top floor or top of ladder, it will roll on the floor
           while((isTouching(Floor.class)||isTouching(Ladder.class)) && getY()< BackGround1.floors[0].getY()+3)
           {
             setLocation(getX() + 3, getY() - 3);
             turn(8);
           }
+          //while the barrel's on the bottom floor it will roll on it
           while(isTouching(Floor.class) && getY() > BackGround1.floors[7].getY()){
               setLocation(getX() + 3, getY() - 3);
             turn(8);
