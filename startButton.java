@@ -13,7 +13,7 @@ public class startButton extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {   
+    {   // When the start button is pressed then it starts the game
         // Add your action code here.
         if (Greenfoot.mousePressed(this)) {
             BackGround1.MarioSpot[0] = 125;

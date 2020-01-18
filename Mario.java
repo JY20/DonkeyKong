@@ -6,19 +6,17 @@ import java.io.File;
 
 public class Mario extends Actor
 {
-    int speed;
-    String Marioimage = "mariopixelCopy.png";
+    int speed; // The speed of mario
+    String Marioimage = "mariopixelCopy.png"; // Declare the images
     private GreenfootImage image = new GreenfootImage("mariopixel2.png");
     private GreenfootImage image2 = new GreenfootImage("marioleft.png");
     private GreenfootImage image3 = new GreenfootImage("mariopixel.png");
-    long lastTime;
-    public static int Lives = 3;
-    int textLX = 750;
-    int textLY = 600;
-    int JumpS = - 29;
-    public static int oldS = 0;
+    long lastTime; // Last time mario image got changed
+    public static int Lives = 3; // The amount of lives
+    int JumpS = - 29; // The jump speed
+    public static int oldS = 0; // The previous high score
   
-    public Mario() {
+    public Mario() { // Set the images
         GreenfootImage image = getImage();
         GreenfootImage image2 = getImage();
         GreenfootImage image3 = getImage();
@@ -29,12 +27,11 @@ public class Mario extends Actor
     
     public void act() {
         speed = speed + 1;
-        setLocation( getX(), getY() + speed);
+        setLocation( getX(), getY() + speed); // Change the location the of mario 
+        // The score and everything the player wants to know
         getWorld().showText( "Score "+BackGround1.score, BackGround1.width/2-100,100);
         getWorld().showText( "Number of keys    "+BackGround1.key, BackGround1.width/2, 50);
-        BackGround1.MarioSpot[0] = getX();
-        BackGround1.MarioSpot[1] = getY();
-        try {
+        try { // Find the previous high score
             findHighScore();
         } catch(IOException ioe) {
         }

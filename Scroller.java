@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+// The scroller class from Muizz
 public class Scroller
 {
     private World world; // view window world

@@ -13,7 +13,7 @@ public class replayButton extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+    { // when the replay button is been pressed it resets the whole game
         // Add your action code here.
         if (Greenfoot.mousePressed(this)) {
             BackGround1.MarioSpot[0] = 125;
@@ -23,6 +23,7 @@ public class replayButton extends Actor
             for(int i = 0; i < BackGround1.findOrnot.length; i++){
                 BackGround1.findOrnot[i] = true;
             }
+            BackGround1.foundP = false;
             Greenfoot.setWorld(new BackGround1());
         }
     }    

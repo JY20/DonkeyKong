@@ -22,7 +22,7 @@ public class BackGround1 extends World
     public static Mario mainPlayer = new Mario(); // Declare the main player
     public static key [] keys = new key []{new key(),new key(),new key()}; // Object for the keys
     public static boolean [] findOrnot = new boolean []{true, true, true}; // Boolean that tells the computer if the key is been found or not
-   
+    public static boolean foundP = false; // Tells the program if the princess is been saved or not
     // Gets resolution of current display
     public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
     public static int width = (int)(screenSize.getWidth()-300); 
@@ -46,7 +46,10 @@ public class BackGround1 extends World
         addObject(scrollActor, MarioSpot[0], MarioSpot[1]);
 
         addObject(new DK(), 200, fy[0]-60);
-        addObject(new Princess(), 70, fy[0]-60);
+        
+        if (foundP == false){
+            addObject(new Princess(), 70, fy[0]-60);
+        }
         if(findOrnot[0] == true) {
             addObject(keys[0], 200, fy[0]-60);
             keys[0].id = 0;

@@ -17,6 +17,7 @@ public class Princess extends Actor
         if(isTouching(Mario.class) && BackGround1.key == 3) {
             getWorld().removeObject(this);
             BackGround1.score = BackGround1.score*2;
+            BackGround1.foundP = true;
         }
     }    
 }
