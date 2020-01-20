@@ -7,7 +7,6 @@ import greenfoot.*;
  */
 public class rightArrow extends Arrow
 {
-    boolean transfer;
     /**
      * Act - do whatever the rightArrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

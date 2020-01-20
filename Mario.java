@@ -11,7 +11,7 @@ public class Mario extends Actor
     private GreenfootImage image = new GreenfootImage("mariopixel2.png");
     private GreenfootImage image2 = new GreenfootImage("marioleft.png");
     private GreenfootImage image3 = new GreenfootImage("mariopixel.png");
-    long lastTime; // Last time mario image got changed
+    private long lastTime; // Last time mario image got changed
     public static int Lives = 3; // The amount of lives
     int JumpS = - 29; // The jump speed
     public static int oldS = 0; // The previous high score

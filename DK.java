@@ -1,7 +1,7 @@
 import greenfoot.*;
 public class DK extends Actor
 {
-    long lastTime; // Last time donkey kong rolls a barrel
+    private long lastTime; // Last time donkey kong rolls a barrel
    
     public void act() 
     {// Rolls the barrel

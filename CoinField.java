@@ -13,7 +13,7 @@ public class CoinField extends World
      * Constructor for objects of class CoinField.
      * 
      */
-    long lT = System.currentTimeMillis(); // Last time when it spawn it a coin
+    private long lastTime = System.currentTimeMillis(); // Last time when it spawn it a coin
     public static Mario mario = new Mario();// Declare the mainplayer
     
     public CoinField()
@@ -34,8 +34,8 @@ public class CoinField extends World
         mario.JumpS = -(24);
     }
     public void act() { // The function that spawn the coins 
-        if (System.currentTimeMillis() - lT > 5000) {
-            lT = System.currentTimeMillis();
+        if (System.currentTimeMillis() - lastTime > 5000) {
+            lastTime = System.currentTimeMillis();
             int y = (int)(Math.random() * ((BackGround1.height-30)+1)+30);
             int x = (int)(Math.random() * ((BackGround1.width-15)+1)+15);
             addObject(new Coin(),x ,y);
